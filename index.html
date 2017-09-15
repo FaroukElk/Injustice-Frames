@@ -1,0 +1,294 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Injustice Frames</title>
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body class="dark-theme">
+	<div class="body-margin">
+		<div class="container-fluid" id="container1">
+			<div class="row">
+				<div class="col-xs-12"> 
+					<header>
+						<h1 align='center'>Injustice 2 Frame Data and Move List</h1>
+					</header>
+				</div>
+			</div>
+			<div class="row margin-col">
+				<div class="col-xs-12" align="center">
+					<img class="img-responsive" src="css/images/header.jpg"></img>
+				</div>
+			</div>
+			<div class="row margin-col">
+				<div class="col-xs-12">
+					<span class="pull-right"> 
+						<div class="dropdown">
+							<button class="btn btn-primary dropdown-toggle-dark" type="button" data-toggle="dropdown" id="dropdown-button">Change Theme <span class="caret"></span></button>
+								<ul class="dropdown-menu">
+									<li id="change-dark" class="dropdown-item">Dark</li>
+									<li id="change-light" class="dropdown-item">Light</li>
+								</ul>
+						</div> 
+					</span>
+				</div>
+			</div>	
+			<div class="row">
+				<div class="col-xs-12" id="frame-explain">
+					<button type="button" class="btn btn-primary frame-btn-dark frame-btn-size" id="frame-button" data-toggle="collapse" data-target="#overview">Frame Data Overview <span class="caret"></span></button>
+				</div>
+			</div>
+			<div class="row">	
+				<div id="overview" class="col-xs-10 frame-collapse collapse">
+					<h3>Frame Data Basics</h3>
+						<p>Injustice 2 runs at 60 Frames Per Second (FPS). This means that 1 frame is equal to 1/60th of a second. The animation of a character's move is broken down into different stages. These stages are: the <i>start-up</i> frames - the amount of frames it takes for the attack to come out after you press the button, the <i>active</i> frames - the amount of frames for which the move is in effect, and the <i>recovery frames</i> - the amount of frames it takes for the character to recover and be ready for the next input.</p>
+						<p class="white-border">You can calculate the total amount of frames a move takes to complete by adding start-up frames + active frames + recovery frames. A move like Aquaman's Flounder Fist has a start-up of 9, active of 2, and recovery of 12. So 9 + 2 + 12 = 23 total frames for this move.</p>
+					<h3>Hit and Block Advantage</h3>
+						<p>In the tables below you will see two columns for 'Hit Advantage' and 'Block Advantage.' These numbers refer to the frame advantage or disadvantage your character will be whether the move hits or is blocked. A positive number represents an advantage, while negative numbers represent a disadvantage.</p>
+						<p class="white-border">For example: Batman's Slide Kick is -37 frames on block. This means if Batman's opponent block's this move, then Batman will be at a 37 frame disadvantage compared to his opponent. The opponent can then input any move that has less than a 37 frame startup and it will be a guaranteed hit. It's important to know the frame data for your character's moves so you can stay in control of the match and avoid putting yourself at a disadvantage.</p>
+					<h3>Special Move Cancel</h3>
+						<p>In Injustice 2, players can transition a normal combo attack into a special move to extend a combo and apply even more pressure and damage than normal. In order to cancel a combo into a special move, the special move input has to be executed before the animation of the combo string is finished. The recovery frames from the combo string are "cancelled" and the character goes right into their special move.</p>
+						<p>Not every special move can cancel from every combo. There are two formulas that are important in determining if a special move will cancel from a combo, depending on whether your opponent was hit or blocked the attack.</p>
+						<p><i>Hit Cancel Advantage</i>: Startup + Active + (Recovery-Cancel) + Hit Adv</p>	
+						<p><i>Block Cancel Advantage</i>: Startup + Active + (Recovery-Cancel) + Block Adv</p>
+						<p class="white-border margin-col">For Example: Atrocitus' Heartless move has a startup of 21 frames, active of 2, recovery of 32, cancel of 33, and a hit advantage of 27. Putting these frames into the formula above for Hit Cancel Advantage gets 21 + 2 + (32-33) + 27 = 49. This means that any special move that has less than 49 startup frames can be used to extend the combo.</p>
+				</div>
+			</div>
+			<div class="row">
+				<form>
+				<div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+					<div class="form-group" id="char1-form">
+						<label class="character-label" for="char1">Character:</label>
+						<select class="form-control select-width" id="sel1">
+							<option value=""></option>
+							<option value="aquaman">Aquaman</option>
+							<option value="atrocitus">Atrocitus</option>
+							<option value="bane">Bane</option>
+							<option value="batman">Batman</option>
+							<option value="black_adam">Black Adam</option>
+							<option value="black_canary">Black Canary</option>
+							<option value="blue_beetle">Blue Beetle</option>
+							<option value="braniac">Brainiac</option>
+							<option value="captain_cold">Captain Cold</option>
+							<option value="catwoman">Catwoman</option>
+							<option value="cheetah">Cheetah</option>
+							<option value="cyborg">Cyborg</option>
+							<option value="darkseid">Darkseid</option>
+							<option value="deadshot">Deadshot</option>
+							<option value="doctor_fate">Doctor Fate</option>
+							<option value="firestorm">Firestorm</option>
+							<option value="flash">Flash</option>
+							<option value="gorilla_grodd">Gorilla Grodd</option>
+							<option value="green_arrow">Green Arrow</option>
+							<option value="green_lantern">Green Lantern</option>
+							<option value="harley_quinn">Harley Quinn</option>
+							<option value="joker">Joker</option>
+							<option value="posion_ivy">Poison Ivy</option>
+							<option value="raiden">Raiden</option>
+							<option value="robin">Robin</option>
+							<option value="scarecrow">Scarecrow</option>
+							<option value="supergirl">Supergirl</option>
+							<option value="superman">Superman</option>
+							<option value="swamp_thing">Swamp Thing</option>
+							<option value="wonder_woman">Wonder Woman</option>
+						</select>
+					</div>
+					<div class="checkbox matchup-checkbox">
+						<label><input id="matchup" type="checkbox" value="">Compare Matchup</label>
+					</div>
+				</div>
+				<div class="col-xs-12 col-sm-4 col-md-4">
+					<p class="text-center text-vs" id="vs-text">VS.</p>
+				</div>
+				<div class="col-xs-12 col-sm-4 col-md-4">
+					<div class="form-group" id="char2-form">
+						<label class = "character-label2" for="char2-form">Character:</label>
+						<select class="form-control select-width2" id="sel2">
+							<option value=""></option>
+							<option value="aquaman">Aquaman</option>
+							<option value="atrocitus">Atrocitus</option>
+							<option value="bane">Bane</option>
+							<option value="batman">Batman</option>
+							<option value="black_adam">Black Adam</option>
+							<option value="black_canary">Black Canary</option>
+							<option value="black_manta">Black Manta</option>
+							<option value="blue_beetle">Blue Beetle</option>
+							<option value="braniac">Brainiac</option>
+							<option value="captain_cold">Captain Cold</option>
+							<option value="catwoman">Catwoman</option>
+							<option value="cheetah">Cheetah</option>
+							<option value="cyborg">Cyborg</option>
+							<option value="darkseid">Darkseid</option>
+							<option value="deadshot">Deadshot</option>
+							<option value="doctor_fate">Doctor Fate</option>
+							<option value="firestorm">Firestorm</option>
+							<option value="flash">Flash</option>
+							<option value="gorilla_grodd">Gorilla Grodd</option>
+							<option value="green_arrow">Green Arrow</option>
+							<option value="green_lantern">Green Lantern</option>
+							<option value="harley_quinn">Harley Quinn</option>
+							<option value="hellboy">Hellboy</option>
+							<option value="joker">Joker</option>
+							<option value="posion_ivy">Poison Ivy</option>
+							<option value="raiden">Raiden</option>
+							<option value="red_hood">Red Hood</option>
+							<option value="robin">Robin</option>
+							<option value="scarecrow">Scarecrow</option>
+							<option value="starfire">Starfire</option>
+							<option value="subzero">Sub-Zero</option>
+							<option value="supergirl">Supergirl</option>
+							<option value="superman">Superman</option>
+							<option value="swamp_thing">Swamp Thing</option>
+							<option value="wonder_woman">Wonder Woman</option>
+						</select>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<h4 class="header-key">Table Key</h4>
+			</div>
+			<div class="row">
+				<div class="col-xs-8 col-sm-8 col-md-6 key-border">
+					<table class="input-table">
+						<th></th>
+						<th>Xbox One</th>
+						<th>PS4</th>
+						<tr><td>Light Attack: </td>
+							<td class="text-center">X</td>
+							<td class="text-center" style="font-size:20px;">&#x25A1;</td>
+						</tr>
+						<tr><td>Medium Attack: </td>
+							<td class="text-center">Y</td>
+							<td class="text-center">&#x25B3;</td>
+						</tr>
+						<tr><td>Heavy Attack: </td>
+							<td class="text-center">A</td>
+							<td class="text-center">X</td>
+						</tr>
+						<tr><td>Character Power: </td>
+							<td class="text-center">B</td>
+							<td class="text-center">O</td>
+						</tr>
+					</table>
+					<p class="paragraph-key">1 = Light Attack <span class="key-padding">2 = Medium Attack</span> <span class="key-padding">3 = Heavy Attack</span> <span class="key-padding">4 = Character Power</span></p>
+					<p class="paragraph-key">B = Back <span class="key-padding">F = Forward</span> <span class="key-padding">U = Up</span> <span class="key-padding">D = Down</span><span class="key-padding">j = Jump/Air</span></p>
+					<p class="paragraph-key">MB = Meter Burn (RT/R2) <span class="key-padding">SS = Stance Switch (LT/L2)</span></p>
+					<p></p>
+				</div>
+			</div>
+			<div class="row">
+				<h2 id="char1-header" class="char-header"></h2>
+			</div>
+			<div class="row-fluid">
+				<div class="col-xs-12 table-buffer" id="char1-moves"></div>
+			</div>
+			<div class="row">
+				<p class="text-center text-vs" id="vs-text2">VS.</p>
+			</div>
+			<div class="row">
+				<h2 id="char2-header" class="char-header"></h2>
+			</div>
+			<div class="row-fluid">
+				<div class="col-xs-12 table-buffer" id="char2-moves"></div>
+			</div>
+		</div>
+	</div>
+		
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+	<script type="text/javascript">
+		$("document").ready(function() {
+	 
+	
+		$("#matchup").click(function(){
+			if ($("#matchup").is(':checked')){
+				$("#vs-text").css("visibility", "visible");
+				$("#char2-form").css("visibility", "visible");
+			}
+			else{
+				$("#vs-text").css("visibility", "hidden");
+				$("#vs-text2").css("visibility", "hidden");
+				$("#char2-form").css("visibility", "hidden");
+			}
+		});
+	
+		$("#sel1").change(function(){
+			var $character = $(this).val();
+			var $character_text = $("#sel1 option[value='" + $character +"']").text();
+			$("#char1-header").html($character_text);
+			if ($("body").hasClass("dark-theme")){
+				$theme = "table-dark";
+			}
+			else{
+				$theme = "table-light";
+			}
+			$.ajax({
+				type: "GET",
+				url: "include/get_data.php?c="+$character + "&t=1&col=" +$theme,
+				dataType: "html",
+				success: function(response){
+					$("#char1-moves").html(response);
+				}
+			});
+		});
+	
+		$("#sel2").change(function(){
+			var $character = $(this).val();
+			var $character_text = $("#sel2 option[value='" + $character +"']").text();
+			$("#vs-text2").css("visibility", "visible")
+			$("#char2-header").html($character_text);
+			if ($("body").hasClass("dark-theme")){
+				$theme = "table-dark";
+			}
+			else{
+				$theme = "table-light";
+			}
+			$.ajax({
+				type: "GET",
+				url: "include/get_data.php?c="+$character + "&t=2&col=" +$theme,
+				dataType: "html",
+				success: function(response){
+					$("#char2-moves").html(response);
+				}
+			});
+		});
+	
+		$("#change-light").click(function(){
+			$("body").removeClass("dark-theme");
+			$("body").addClass("light-theme");
+			$("#dropdown-button").removeClass("dropdown-toggle-dark");
+			$("#frame-button").removeClass("btn-dark");
+			$("#overview").removeClass("white-border");
+			$("#overview").addClass("black-border");
+			if ($("#char-frame-data-table").hasClass("table-dark")){
+				$("#char-frame-data-table").removeClass("table-dark");
+				$("#char-frame-data-table").addClass("table-light");
+			}
+			if ($("#char-table2").hasClass("table-dark")){
+				$("#char-table2").removeClass("table-dark");
+				$("#char-table2").addClass("table-light");
+			}
+		});
+	
+		$("#change-dark").click(function(){
+			$("body").removeClass("light-theme");
+			$("body").addClass("dark-theme");
+			$("#dropdown-button").addClass("dropdown-toggle-dark");
+			$("#frame-button").addClass("btn-dark");
+			$("#overview").removeClass("black-border");
+			$("#overview").addClass("white-border");
+			if ($("#char-frame-data-table").hasClass("table-light")){
+				$("#char-frame-data-table").removeClass("table-light");
+				$("#char-frame-data-table").addClass("table-dark");
+			}
+			if ($("#char-table2").hasClass("table-light")){
+				$("#char-table2").removeClass("table-light");
+				$("#char-table2").addClass("table-dark");
+			}
+		});
+	
+		});
+	</script>
+</body>
+</html>
